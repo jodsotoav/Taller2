@@ -1,8 +1,10 @@
 //Declaración de variables
 //Variables generales
 Nodes nodes;
+color grey= color(208, 206, 212);
 int level;
 int grosorn;
+int grosorl;
 //Variables específicas de cada nivel
 //Nivel 1
 PVector[] X1;
@@ -23,6 +25,7 @@ void setup(){
   size(800,600);
   //NOTA: Máximo grosor es 70.
   grosorn=70;
+  grosorl=10;
   level=1;
   //Se declaran los puntos de cada nivel
   //Nivel 1
