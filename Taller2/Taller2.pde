@@ -1,7 +1,8 @@
 //Declaración de variables
 //Variables generales
 Nodes nodes;
-color grey= color(208, 206, 212);
+Lines lines;
+
 int level;
 int grosorn;
 int grosorl;
@@ -42,12 +43,13 @@ void setup(){
   X1[9]=new PVector(600,450);
   //Para cada caso se elige nodes dependiendo del nivel. 
   if(level==1){
-  nodes=new Nodes(X1, grosorn);
+  nodes = new Nodes(X1, grosorn);
+  lines = new Lines(MG1, X1, grosorl);
   }
   }
   
-
-
 void draw(){
+  lines.display();
   nodes.display();
-}
+  
+  }
