@@ -1,6 +1,5 @@
-class Nodes {
-  PVector[] position= new PVector[10];
-  int grosorn;
+class Nodes extends Grafo{
+  
   Nodes(PVector[] tempNodes, int sizeNode){
       for(int i=0; i<tempNodes.length; i++){
       setPositions(tempNodes);      
@@ -8,19 +7,10 @@ class Nodes {
       setSizeNode(sizeNode);
       
   }
- 
-  void setPositions(PVector[] pos){
-    for (int i=0; i<pos.length; i++){
-    position[i]=pos[i];
-    }
-  }
-  void setSizeNode(int sizeNode){
-    grosorn=sizeNode;
-  }
   
   void display(){
     pushStyle();
-    background(255);
+    //background(255);
     stroke(0);
     strokeWeight(10);
     fill(0);
