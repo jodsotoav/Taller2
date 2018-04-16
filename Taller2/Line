@@ -1,0 +1,31 @@
+class Lines{
+  int[][] Matrix;
+  int grosorl;
+  Lines(int[][] MG, int sizel){
+    setValues(MG);
+    setLine(sizel);
+  }
+  void setValues(int[][] MG1){
+    for (int i=0; i<MG1.length; i++){
+      for (int j=0; j<MG1.length; j++){
+      Matrix[i][j]=MG1[i][j];
+      }
+    }
+  }
+  void setLine(int sizel){
+    grosorl=sizel;
+  }
+  void display(){
+    pushStyle();
+    strokeWeight(grosorl);
+    stroke(grey);
+    for (int i=0; i<Matrix.length; i++){
+      for (int j=0; j<Matrix.length; j++){
+        if(Matrix[i][j]!=0){
+          line()
+        }
+    popStyle();
+    
+  }
+  
+}
