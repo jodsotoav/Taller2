@@ -1,11 +1,11 @@
 //Declaración de variables
 //Variables generales
-Nodes nodes;
-Lines lines;
-
-int level;
+//Nodes nodes;
+//Lines lines;
+//int level;
+Circle[] circles;
 int grosorn;
-int grosorl;
+//int grosorl;
 //Variables específicas de cada nivel
 //Nivel 1
 PVector[] X1;
@@ -26,8 +26,8 @@ void setup(){
   size(800,600);
   //NOTA: Máximo grosor es 70.
   grosorn=70;
-  grosorl=10;
-  level=1;
+  //grosorl=10;
+  //level=1;
   //Se declaran los puntos de cada nivel
   //Nivel 1
   X1= new PVector[10];
@@ -42,14 +42,20 @@ void setup(){
   X1[8]=new PVector(400,450);
   X1[9]=new PVector(600,450);
   //Para cada caso se elige nodes dependiendo del nivel. 
-  if(level==1){
-  nodes = new Nodes(X1, grosorn);
-  lines = new Lines(MG1, X1, grosorl);
-  }
+  //if(level==1){
+  //nodes = new Nodes(X1, grosorn);
+  //lines = new Lines(MG1, X1, grosorl);
+ // }
+   circles = new Circle[X1.length];
+  for(int i=0; i<X1.length; i++)
+    circles[i]= new Circle (X1[i], grosorn);
+   
   }
   
 void draw(){
-  lines.display();
-  nodes.display();
+  for(int i=0; i<circles.length; i++)
+  circles[i].display();
+  //lines.display();
+  //nodes.display();
   
   }
