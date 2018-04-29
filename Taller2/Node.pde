@@ -1,29 +1,24 @@
-class Node{
-  //1. Attributes
+//Abstracto porque no tiene forma (aún) debido a que se implementará en sus clase derivadas.
+abstract class Node{
+  //1. Atributos
   PVector position;
-  int sizen;  
-  //2. Default Constructor
-  //Node(PVector tempNode, int sizeNode){
-  //    setPositions(tempNode);      
-  //    setSizeNode(sizeNode);
-  //    }
-  //3. Methods
-  //3.1 Setters
-  void setPositions(PVector pos){
-    position=pos;
-    }
-  
-  void setSizeNode(int sizeNode){
-    sizen=sizeNode;
-    }
-  //3.2 Getters
-  PVector position() {
-    return position;
-    }
-  
-  int sizen() {
-    return sizen;
-    }
-    
-  
+  float sizen;
+  abstract void display();
+  //abstract boolean pick();
+  //3.2 Setters
+  void setSizeN(float s){
+    sizen=s;
   }
+  void setPosition(PVector pos){
+    position=pos;
+  }
+  //method overloading
+  void setPosition(float x, float y){
+    setPosition(new PVector(x,y));
+  }
+ //3.3 Getters
+   PVector position(){
+     return position;
+   }
+ 
+}
