@@ -1,48 +1,27 @@
-//class Line {
-//  int grosorl;
-//  PVector[] position= new PVector[10];
-//  color grey= color(208, 206, 212);
-//  Line(int[][] MG, PVector[] tempNodes,int sizel){
-//    setValues(MG);
-//    setLine(sizel);
-//    for(int i=0; i<tempNodes.length; i++){
-//      setPositions(tempNodes);      
-//      }
-//  }
+class Line{
+  Node origin, end;
+  float sizel;
+  Line(Node node1, Node node2, float tempsizel){
+    origin=node1;
+    end=node2;
+    sizel=tempsizel;
+  }
   
-//  void setPositions(PVector[] pos){
-//    for (int i=0; i<pos.length; i++){
-//    position[i]=pos[i];
-//    }
-//  }
+  void display(){
+    pushStyle();
+    strokeWeight(sizel);
+    stroke(208,206,212);
+    line(origin().position().x, origin().position().y, end().position().x, end().position().y);
+    popStyle();
+  }
   
-//  void setValues(int[][] MG){
-//    for (int i=0; i<int(MG.length); i++){
-//      for (int j=0; j<int(MG[i].length); j++){
-//      Matrix[i][j]=MG[i][j];
-//      }
-//    }
-//  }
+  Node origin(){
+    return origin;  
+  }
   
-//  void setLine(int sizel){
-//    grosorl=sizel;
-//  }
+  Node end(){
+    return end;  
+  }
   
-//  void display(){
-//    pushStyle();
-//    background(255);
-//    strokeWeight(grosorl);
-//    stroke(grey);
-//    fill(grey);
-//    for (int i=0; i<Matrix.length; i++){
-//      for (int j=0; j<Matrix.length; j++){
-//        if(position[i]!=null && position[j]!=null){
-//          if(Matrix[i][j]!=0){
-//          line(position[i].x, position[i].y, position[j].x, position[j].y);
-//          }
-//        }    
-//       }
-//     }
-//   popStyle(); 
-//  }
-//}
+  
+}
