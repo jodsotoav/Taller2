@@ -1,18 +1,15 @@
 class Circle extends Node{
-  Circle(PVector tempNode, int sizeNode){
-      setPositions(tempNode);      
-      setSizeNode(sizeNode);
-      }
+  Circle(PVector tempPos, float tempSizeN){
+    setPosition(tempPos);
+    setSizeN(tempSizeN);
+  }
+  
+  @Override
   void display(){
     pushStyle();
-    //background(255);
-    stroke(0);
-    strokeWeight(10);
     fill(0);
-    if(position!=null){
-    ellipse(position.x, position.y, grosorn, grosorn);
-    }
+    stroke(0);
+    ellipse(position.x, position.y, sizen, sizen);
     popStyle();
   }
-
 }
