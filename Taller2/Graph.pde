@@ -1,7 +1,6 @@
 class Graph
 {
-  Rectangle[] squares;
-  //Circle[] circles;
+  Node[] circles;
   Line[] lines;
   Table tableN;
   Table tableL;
@@ -9,13 +8,13 @@ class Graph
   Graph(Table tempTableN, Table tempTableL){
     setTableN(tempTableN);
     setTableL(tempTableL);
-    squares=new Rectangle[tableN.getRowCount()];
-    //circles=new Circle[tableN.getRowCount()];
+    circles=new Circle[tableN.getRowCount()];
+    //circles=new Rectangle[tableN.getRowCount()];
     for (int i=0; i<tableN.getRowCount(); i++){
       TableRow row=tableN.getRow(i);
       position=new PVector(row.getInt(0), row.getInt(1));
-      squares[i]=new Rectangle(position, 70);
-      //circles[i]=new Circle(position, 70);
+      circles[i]=new Circle(position, 70);
+      //circles[i]=new Rectangle(position, 70);
     }
     
     lines=new Line[count(tableL)];
@@ -23,8 +22,7 @@ class Graph
     for(int i=0; i<tableL.getRowCount(); i++){
       for(int j=0; j<tableL.getColumnCount(); j++){
         if(tableL.getInt(i,j)!=0){
-          //lines[k]=new Line(circles[i], circles[j], 20);
-          lines[k]=new Line(squares[i], squares[j], 20);
+          lines[k]=new Line(circles[i], circles[j], 20);
           k++;
         }
       }      
@@ -57,8 +55,7 @@ class Graph
         lines[i].display();
      }
      for (int i=0; i<tableL.getRowCount(); i++){
-      //circles[i].display();
-      squares[i].display();
+      circles[i].display();
      }
   }
   
